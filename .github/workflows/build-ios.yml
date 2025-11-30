@@ -37,11 +37,7 @@ jobs:
     - name: Create build directory
       run: mkdir -p build
 
-    - name: Export iOS project
-      run: godot --export "iOS" build/your_project_name.xcodeproj
-      env:
-        DISPLAY: :99.0
-        
+    
     - name: Set iOS Deployment Target
       run: sed -i '' 's/IPHONEOS_DEPLOYMENT_TARGET = 10.0;/IPHONEOS_DEPLOYMENT_TARGET = 12.0;/' build/your_project_name.xcodeproj/project.pbxproj
 
